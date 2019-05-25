@@ -3,7 +3,6 @@ import sys
 import uuid
 import logging
 from ocr_core import process_image
-from werkzeug import secure_filename
 from flask import Flask, request, jsonify
 from logging import Formatter, FileHandler
 
