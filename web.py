@@ -30,4 +30,4 @@ def ocr():
         return jsonify({"status":"error","message":"Please POST file and use 'image' as its key"})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',debug=True)
+    app.run(host='0.0.0.0',port=8080,debug=True)
