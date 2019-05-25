@@ -23,8 +23,6 @@ def ocr():
             return jsonify({"status":"error","message":"Empty request!"})
         uploaded_image = request.files['image']
         if uploaded_image and allowed_file(uploaded_image.filename):
-            cache_file_name = str(uuid.uuid4()) + '_' + uploaded_image.filename
-            uploaded_image.save(os.path.join(app.config['CACHE_FOLDER'], cache_file_name))
             ocr_output = process_image(uploaded_image)
             return jsonify({"status":"success","ocr_content":ocr_output})
         else:
