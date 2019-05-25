@@ -21,7 +21,7 @@ def ocr():
         if 'image' not in request.files:
             return jsonify({"status":"error","message":"Empty request!"})
         uploaded_image = request.files['image']
-        if uploaded_image and allowed_file(uploaded_image.filename):
+        if uploaded_image and allowed_file(str.lower(uploaded_image.filename)):
             ocr_output = process_image(uploaded_image)
             return jsonify({"status":"success","ocr_content":ocr_output})
         else:
