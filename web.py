@@ -29,5 +29,14 @@ def ocr():
     if request.method == 'GET':
         return jsonify({"status":"error","message":"Please POST file and use 'image' as its key"})
 
+@app.route('/v{}/qrcode_decode'.format(app.config['VERSION']), methods=['GET', 'POST'])
+def qrcode_decode():
+    if request.method == 'POST':
+
+@app.route('/v{}/qrcode_encode'.format(app.config['VERSION']), methods=['GET', 'POST'])
+def qrcode_encode():
+    if request.method == 'POST':
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=8080,debug=True)
